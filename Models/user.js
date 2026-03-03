@@ -5,3 +5,18 @@ main().then(() => console.log("connection seccessful")) .catch(err => console.lo
 async function main() {
   await mongoose.connect('mongodb://127.0.0.1:27017/relation');
 }
+
+
+
+const userSchema  = new Schema({
+    username: String,
+    addresses: [
+        {
+            location: String,
+            city: String,
+        },
+    ],
+});
+
+
+const User = mongoose.mod
