@@ -16,7 +16,13 @@ const userSchema  = new Schema({
             city: String,
         },
     ],
-});
+}); 
 
 
-const User = mongoose.mod
+const User = mongoose.model("User", userSchema  );
+
+const addUsers =  async() => {
+    let user1 = new User({
+        username: "sherlockholmes"
+    })
+}
